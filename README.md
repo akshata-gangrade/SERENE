@@ -149,7 +149,6 @@ JWT_SECRET=your_jwt_secret_key
 GROQ_API_KEY=your_groq_api_key
 ```
 
-> ⚠️ Never commit your `.env` file. It's already included in `.gitignore`.
 
 ---
 
