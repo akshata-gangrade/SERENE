@@ -88,12 +88,12 @@
 ### Mindful Journal
 | New Entry | Saved Journals | Mood Calendar |
 |---|---|---|
-| ![New Journal](screenshots/NewJournal.png) | ![Saved Journals](screenshots/SavedJournal.png) | ![Calendar](screenshots/CalendarPage.png) |
+| ![New Journal](screenshots/NewJournal.png) | ![Saved Journals](screenshots/SavedJournal.png) | ![Calendar](screenshots/CalenderPage.png) |
 
 ### Breathing Sanctuary
 | Sanctuary | Session |
 |---|---|
-| ![Breathing Intro](screenshots/BreathingPage1.png) | ![Breathing Active](screenshots/BreathingPage2.png) |
+| ![Breathing Intro](screenshots/BreathingPage1.png) | ![Breathing Active](screenshots/BreathingPage2.pngpng) |
 
 ### Logout
 ![Logout](screenshots/Logout.png)
