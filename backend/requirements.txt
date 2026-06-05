@@ -9,3 +9,4 @@ pydantic
 email-validator
 httpx
 groq==1.2.0
+argon2-cffi
