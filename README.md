@@ -168,10 +168,13 @@ pip install -r requirements.txt
 Create a `.env` file in the `backend/` directory:
 
 ```env
-MONGO_URI=your_mongodb_connection_string
-DATABASE_NAME=your_database_name
-SECRET_KEY=your_secret_key
-GROQ_API_KEY=your_groq_api_key
+MONGO_URI=your_mongodb_connection_string 
+DB_NAME=your_database_name 
+JWT_SECRET=your_jwt_secret 
+JWT_ALGORITHM=HS256 
+ACCESS_TOKEN_EXPIRE_MINUTES=time_provided
+GROQ_API_KEY=your_groq_api_key 
+GROQ_MODEL=your_groq_model
 ```
 
 Start the backend:
@@ -192,7 +195,7 @@ npm install
 Create a `.env` file in the `frontend/` directory:
 
 ```env
-VITE_API_URL=http://localhost:8000
+VITE_API_URL=https://your-deployed-backend-url
 ```
 
 Start the frontend:

@@ -31,7 +31,7 @@ export default function Login() {
       password,
     });
 
-    console.log("TOKEN:", res.data.access_token);
+   
 
     /* Save auth token */
     login(res.data.access_token);
