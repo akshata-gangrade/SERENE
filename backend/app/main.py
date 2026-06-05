@@ -4,7 +4,7 @@ from app.routes import auth_routes, chat_routes, journal_routes, breathing_route
 
 app = FastAPI()
 
-# 🔥 ADD THIS (VERY IMPORTANT)
+#ADD THIS (VERY IMPORTANT)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -12,6 +12,7 @@ app.add_middleware(
 "http://localhost:5174",
 "http://127.0.0.1:5173",
 "http://127.0.0.1:5174",
+"https://serene-akshata-s-projects22.vercel.app",
 ],
   # frontend URL
     allow_credentials=True,
