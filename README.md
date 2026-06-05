@@ -93,10 +93,10 @@
 ### Breathing Sanctuary
 | Sanctuary | Session |
 |---|---|
-| ![Breathing Intro](screenshots/BreathingPage1.png) | ![Breathing Active](screenshots/BreathingPage2.pngpng) |
+| ![Breathing Intro](screenshots/BreathingPage1.png) | ![Breathing Active](screenshots/BreathingPage2.png) |
 
 ### Logout
-![Logout](screenshots/Logout.png)
+![Logout](screenshots/LogOut.png)
 
 ### Admin
 ![Logout](screenshots/AdminDashboard.png)
