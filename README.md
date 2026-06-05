@@ -1,106 +1,149 @@
 <div align="center">
 
-# 🌿 SERENE
-### AI-Powered Mental Wellness Platform
+<br/>
 
-*A safe and calming digital space for self-reflection, emotional expression, and mindfulness.*
+# S E R E N E
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
-![Stack](https://img.shields.io/badge/Stack-React%20%7C%20FastAPI%20%7C%20MongoDB-informational?style=flat-square)
-![AI](https://img.shields.io/badge/AI-Groq%20API-orange?style=flat-square)
+### *Curating calmness for the mind that never rests.*
+
+*Heal gently, grow deeply & breathe freely*
+
+<br/>
+
+[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-Vercel-0EA5E9?style=for-the-badge&logo=vercel&logoColor=white)](https://serene-akshata-s-projects22.vercel.app/)
+[![Backend](https://img.shields.io/badge/⚙️%20Backend-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://serene-r5vl.onrender.com)
+[![GitHub](https://img.shields.io/badge/📦%20GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akshata-gangrade/SERENE)
+
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 
 </div>
 
 ---
 
-## 📖 Overview
+## 🌙 About SERENE
 
-SERENE is a full-stack mental wellness platform that combines AI-powered conversations, digital journaling, mood tracking, and guided breathing exercises to help users better understand and manage their emotional well-being. Built with a focus on empathy, accessibility, and thoughtful design.
+**SERENE** is a full-stack AI-powered mental wellness platform built to help users manage stress, reflect on their thoughts, and improve emotional well-being. Through a beautifully crafted interface, SERENE brings together three pathways to emotional clarity — an AI companion for real-time support, a mindful journal for personal reflection, and guided breathwork exercises.
+
+> Built with the belief that mental wellness tools should be accessible, private, and genuinely calming to use.
 
 ---
 
 ## ✨ Features
 
-### 👤 User Features
-| Feature | Description |
-|--------|-------------|
-| 🔐 Secure Authentication | JWT-based login and session management |
-| 🏠 Personalized Dashboard | Tailored home view with user-specific insights |
-| 🤖 AI Companion Chat | Empathetic, real-time AI conversations powered by Groq |
-| 💬 Conversation History | Save, revisit, and delete past conversations |
-| 📝 AI-Generated Chat Titles | Automatic intelligent titling of sessions |
-| 📔 Digital Journal | Create, edit, and delete personal journal entries |
-| 🎯 Mood-Based Prompts | Writing prompts tailored to your current mood |
-| 📅 Mood Calendar | Visual tracking of emotional patterns over time |
-| 🌬️ Guided Breathing | Interactive breathing exercises for in-the-moment calm |
-| 👋 Personalized Greetings | Warm, context-aware greetings on each visit |
+### 🔐 Authentication & Security
+- Secure user registration and login
+- JWT-based authentication with protected routes
+- Password hashing via Passlib
 
-### 🛡️ Admin Features
-| Feature | Description |
-|--------|-------------|
-| 🔑 Admin Authentication | Secure, role-protected admin access |
-| 📊 User Analytics | Insights into user engagement and growth |
-| 📓 Journal Analytics | Aggregated journaling trends and patterns |
-| 😊 Mood Statistics | Platform-wide mood distribution and trends |
-| 📈 Platform Activity | Real-time activity insights and platform health |
+### 🤖 AI Mental Wellness Chatbot
+- Real-time AI-powered conversations powered by Groq
+- Emotionally intelligent, context-aware responses
+- Chat history management with delete support
+- Personalized welcome with quick-start prompts
+
+### 📖 Mindful Journal
+- Create, edit, and delete personal journal entries
+- Mood tagging (Happy, Sad, Anxious, Grateful, and more)
+- Reflective prompts to guide your writing
+- Mood history calendar to track your emotional journey over time
+
+### 🌬️ Breathing Sanctuary
+- Guided 4-4-4 box breathing sessions
+- Animated breathing orb with phase instructions (inhale, hold, exhale)
+- Calming full-screen experience designed to ground you
+
+### 👨‍💼 Admin Dashboard
+- User activity monitoring
+- Platform management capabilities
+
+### 📱 Responsive Design
+- Optimized for both desktop and mobile
+- Deep teal glassmorphism UI — calming, modern, and intentional
+
+---
+
+## 📸 Screenshots
+
+### Landing Page
+![Landing Page](screenshots/LandingPage.png)
+
+### Registration Page
+![Register Page](screenshots/RegisterPage.png)
+
+### Login Page
+![Register Page](screenshots/LoginPage.png)
+
+### Dashboard
+![Dashboard](screenshots/Dashboard.png)
+
+### AI Chatbot
+| Welcome | Conversation |
+|---|---|
+| ![Chatbot Welcome](screenshots/ChatPage1.png) | ![Chatbot Chat](screenshots/ChatPage2.png) |
+
+### Mindful Journal
+| New Entry | Saved Journals | Mood Calendar |
+|---|---|---|
+| ![New Journal](screenshots/NewJournal.png) | ![Saved Journals](screenshots/SavedJournal.png) | ![Calendar](screenshots/CalendarPage.png) |
+
+### Breathing Sanctuary
+| Sanctuary | Session |
+|---|---|
+| ![Breathing Intro](screenshots/BreathingPage1.png) | ![Breathing Active](screenshots/BreathingPage2.png) |
+
+### Logout
+![Logout](screenshots/Logout.png)
+
+### Admin
+![Logout](screenshots/AdminDashboard.png)
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Frontend** | React.js, Vite, React Router DOM, Axios, CSS |
+| **Backend** | FastAPI, Python, Uvicorn |
+| **Database** | MongoDB Atlas, Motor (Async Driver) |
+| **Auth** | JWT (JSON Web Tokens), Passlib |
+| **AI** | Groq API |
+| **Deployment** | Vercel (Frontend), Render (Backend), MongoDB Atlas (DB) |
 
 ---
 
 ## 🏗️ System Architecture
 
 ```
-┌─────────────────────────┐
-│   Frontend (React + Vite) │
-└──────────┬──────────────┘
-           │ HTTP / REST
-┌──────────▼──────────────┐
-│   Backend API (FastAPI)   │
-└──────────┬──────────────┘
-           │
-┌──────────▼──────────────┐
-│      MongoDB Atlas        │
-└──────────┬──────────────┘
-           │
-┌──────────▼──────────────┐
-│   Groq AI Integration     │
-└─────────────────────────┘
+User Browser
+     │
+     ▼
+React Frontend  ──────── Vercel
+     │
+     │  REST API (Axios)
+     ▼
+FastAPI Backend ──────── Render
+     │
+     ├──── MongoDB Atlas   (user data, journals, chat history)
+     │
+     └──── Groq AI API     (mental wellness chatbot responses)
 ```
-
----
-
-## 🛠️ Tech Stack
-
-**Frontend**
-- React, Vite, JavaScript, CSS
-- Context API for state management
-
-**Backend**
-- FastAPI (Python)
-- Motor (async MongoDB driver)
-- Pydantic (data validation)
-
-**Database**
-- MongoDB Atlas
-
-**Authentication**
-- JWT (JSON Web Tokens)
-
-**AI Integration**
-- Groq API
-
-**Dev Tools**
-- Git & GitHub, Postman, VS Code
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.9+
-- Node.js 16+
+- Node.js v18+
+- Python 3.10+
 - MongoDB Atlas account
 - Groq API key
+
+---
 
 ### 1. Clone the Repository
 
@@ -109,127 +152,123 @@ git clone https://github.com/akshata-gangrade/SERENE.git
 cd SERENE
 ```
 
+---
+
 ### 2. Backend Setup
 
 ```bash
 cd backend
 python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
-source venv/bin/activate
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # macOS/Linux
 
 pip install -r requirements.txt
+```
+
+Create a `.env` file in the `backend/` directory:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+DATABASE_NAME=your_database_name
+SECRET_KEY=your_secret_key
+GROQ_API_KEY=your_groq_api_key
+```
+
+Start the backend:
+
+```bash
 uvicorn app.main:app --reload
 ```
 
-> Backend runs at: `http://127.0.0.1:8000`
+---
 
 ### 3. Frontend Setup
 
 ```bash
 cd frontend
 npm install
+```
+
+Create a `.env` file in the `frontend/` directory:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+Start the frontend:
+
+```bash
 npm run dev
 ```
 
-> Frontend runs at: `http://localhost:5173`
-
 ---
 
-## 🔐 Environment Variables
-
-Create a `.env` file inside the `backend/` directory:
-
-```env
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-GROQ_API_KEY=your_groq_api_key
-```
-
-
----
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 SERENE/
 │
-├── backend/
-│   ├── app/
-│   │   ├── middleware/       # Auth & request middleware
-│   │   ├── models/           # MongoDB document models
-│   │   ├── routes/           # API route handlers
-│   │   ├── schemas/          # Pydantic request/response schemas
-│   │   ├── services/         # Business logic layer
-│   │   └── utils/            # Helper functions
-│   ├── requirements.txt
-│   └── .gitignore
-│
 ├── frontend/
-│   ├── public/
 │   └── src/
-│       ├── assets/           # Static assets
-│       ├── components/       # Reusable UI components
-│       ├── context/          # Global state (Context API)
-│       ├── hooks/            # Custom React hooks
-│       ├── pages/            # Page-level components
-│       ├── services/         # API call logic
-│       ├── styles/           # Global & component CSS
-│       └── utils/            # Frontend utilities
-│   └── package.json
+│       ├── pages/          # Route-level page components
+│       ├── components/     # Reusable UI components
+│       ├── assets/         # Images, icons
+│       └── services/       # Axios API calls
+│
+├── backend/
+│   └── app/
+│       ├── routes/         # API route handlers
+│       ├── services/       # Business logic
+│       ├── models/         # Pydantic schemas
+│       ├── database/       # MongoDB connection
+│       └── utils/          # Helpers (auth, hashing)
+│
+├── screenshots/            # UI screenshots for README
 │
 └── README.md
 ```
 
 ---
 
-## 🔭 Roadmap
+## 🎯 Future Enhancements
 
-- [ ] Mobile-first Optimization
-- [ ] Password Reset via Email
-- [ ] Email Verification on Signup
-- [ ] AI-Based Mood Insights & Pattern Detection
-- [ ] Advanced Analytics Dashboard
-- [ ] Daily Wellness Recommendations
-- [ ] Push Notifications
+- [ ] Mood Tracking Analytics with visual graphs
+- [ ] AI-Generated Wellness Insights from journal entries
+- [ ] Password Reset & Email Verification
+- [ ] Personalized Wellness Recommendations
+- [ ] Dark / Light Theme Toggle
+- [ ] Mobile App (React Native)
 
 ---
 
-## 🎓 Learning Outcomes
+## ⚠️ Note on Backend Hosting
 
-Building SERENE provided hands-on experience across the full software development lifecycle:
-
-- Full-Stack Development (React + FastAPI)
-- RESTful API Design & Integration
-- Authentication & Authorization (JWT)
-- Database Modeling with MongoDB
-- State Management with Context API
-- AI API Integration (Groq)
-- UI/UX Design for wellness-focused applications
-- Version Control best practices with Git & GitHub
+The backend is deployed on Render's free tier. The first request after a period of inactivity may take **10–30 seconds** while the server wakes up. Subsequent requests will be fast.
 
 ---
 
 ## 👩‍💻 Author
 
-**Akshata Gangrade**  
-B.Tech – Computer Science & Engineering
-
-Passionate about building meaningful software solutions that bring together technology, design, and human well-being.
+**Akshata Gangrade**
+B.Tech Computer Science & Engineering
 
 [![GitHub](https://img.shields.io/badge/GitHub-akshata--gangrade-181717?style=flat-square&logo=github)](https://github.com/akshata-gangrade)
 
 ---
 
-## ⭐ Support
+## 🙏 Acknowledgements
 
-If you found this project helpful or interesting, consider giving it a star on GitHub — it helps more people discover it!
+- [Groq AI](https://groq.com/) — ultra-fast inference for the wellness chatbot
+- [FastAPI](https://fastapi.tiangolo.com/) — modern, high-performance Python web framework
+- [React](https://react.dev/) — UI library
+- [MongoDB Atlas](https://www.mongodb.com/atlas) — cloud database
+- [Render](https://render.com/) & [Vercel](https://vercel.com/) — deployment platforms
 
 ---
 
 <div align="center">
-  Made with 💚 for mental wellness
+
+*SERENE was built as a safe digital space where users can pause, reflect, and find support through technology.*
+*By combining AI, journaling, and mindfulness, SERENE makes mental wellness tools more accessible for everyone.* 💙
+
 </div>
