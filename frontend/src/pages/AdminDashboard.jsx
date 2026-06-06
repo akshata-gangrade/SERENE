@@ -267,7 +267,7 @@ function ActivityFeed({ activity }) {
   const formatTime = (iso) => {
     if (!iso) return "";
     try {
-      const diff = Date.now() - new Date(iso).getTime();
+      const diff = Date.now() - new Date(iso + "Z").getTime();
       const mins = Math.floor(diff / 60000);
       if (mins < 1)  return "just now";
       if (mins < 60) return `${mins}m ago`;

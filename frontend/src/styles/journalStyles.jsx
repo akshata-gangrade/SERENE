@@ -160,13 +160,17 @@ export function injectJournalStyles() {
 
     /* ── Modal backdrop ── */
     .sj-modal-backdrop {
-      position: fixed; inset: 0; z-index: 200;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
       background: rgba(2,10,18,.78);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      animation: sj-fadeUp .28s ease both;
-    }
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-y: auto;
+}
     .sj-modal-card {
       width: 100%; max-width: 560px;
       background: rgba(2,40,52,.88);

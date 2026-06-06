@@ -1,7 +1,8 @@
 from app.database import journal_collection
-from datetime import datetime
+from datetime import datetime, timezone
 from bson import ObjectId
 from fastapi import HTTPException
+
 
 from app.models.journal_model import journal_helper
 from app.utils.mood_templates import (
@@ -22,8 +23,8 @@ async def create_journal_service(data, user_id):
         "content": data.content,
         "mood": data.mood,
         "theme": data.theme,
-        "created_at": datetime.utcnow(),
-        "updated_at": datetime.utcnow()
+        "created_at": datetime.now(timezone.utc),
+        "updated_at": datetime.now(timezone.utc)
     }
 
     result = await journal_collection.insert_one(journal)

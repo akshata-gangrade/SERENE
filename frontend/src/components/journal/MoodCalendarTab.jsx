@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MOODS } from "../../pages/JournalPage";
+import { useEffect } from "react";
 
 const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -9,66 +10,150 @@ const MONTH_NAMES = [
 ];
 
 /* ── Journal Read Modal ── */
-function JournalModal({ journal, onClose }) {
-  const cfg = MOODS[journal.mood] || { color: "#78909C", emoji: "😐" };
-  const d = new Date(journal.created_at);
-  const dateStr = d.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
-  const timeStr = d.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
+function JournalModal({ journals, onClose }) {
+  useEffect(() => {
+  document.body.style.overflow = "hidden";
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, []);
+  const sortedJournals = [...journals].sort(
+    (a, b) => new Date(b.created_at) - new Date(a.created_at)
+  );
+
+  const firstDate = new Date(sortedJournals[0].created_at);
+
+  const dateStr = firstDate.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <div
       className="sj-modal-backdrop"
-      onClick={e => e.target === e.currentTarget && onClose()}
+      onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="sj-modal-card">
+      <div
+        className="sj-modal-card"
+        style={{
+          position: "relative",
+        }}
+      >
         {/* Close */}
         <button
           onClick={onClose}
           style={{
-            position: "absolute", top: 16, right: 16,
-            width: 30, height: 30, borderRadius: "50%",
+            position: "absolute",
+            top: 16,
+            right: 16,
+            width: 30,
+            height: 30,
+            borderRadius: "50%",
             background: "rgba(217,245,240,.07)",
             border: "1px solid rgba(217,245,240,.12)",
             color: "rgba(217,245,240,.5)",
-            cursor: "pointer", display: "flex",
-            alignItems: "center", justifyContent: "center",
-            fontSize: ".82rem", transition: "all .2s ease",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: ".82rem",
           }}
-          onMouseEnter={e => { e.currentTarget.style.background = "rgba(217,245,240,.14)"; e.currentTarget.style.color = "#D9F5F0"; }}
-          onMouseLeave={e => { e.currentTarget.style.background = "rgba(217,245,240,.07)"; e.currentTarget.style.color = "rgba(217,245,240,.5)"; }}
         >
           ✕
         </button>
 
-        {/* Mood bar */}
-        <div style={{ height: 4, borderRadius: 2, background: cfg.color, marginBottom: 20 }}/>
-
-        {/* Date + mood */}
-        <div style={{
-          fontSize: ".6rem", letterSpacing: ".22em",
-          color: "rgba(217,245,240,.32)", textTransform: "uppercase",
-          fontFamily: "'Jost',sans-serif", fontWeight: 300, marginBottom: 8,
-        }}>
-          {dateStr} · {timeStr} · {journal.mood} {cfg.emoji}
+        <div
+          style={{
+            fontSize: ".6rem",
+            letterSpacing: ".22em",
+            color: "rgba(217,245,240,.32)",
+            textTransform: "uppercase",
+            fontFamily: "'Jost',sans-serif",
+            fontWeight: 300,
+            marginBottom: 18,
+          }}
+        >
+          {dateStr} · {journals.length} entr{journals.length === 1 ? "y" : "ies"}
         </div>
 
-        {/* Title */}
-        <h2 style={{
-          fontFamily: "'Cormorant Garamond',serif",
-          fontSize: "1.65rem", fontWeight: 300,
-          color: "#D9F5F0", letterSpacing: ".04em", marginBottom: 18,
-        }}>
-          {journal.title || "Untitled"}
-        </h2>
+        {sortedJournals.map((journal, index) => {
+          const cfg = MOODS[journal.mood] || {
+            color: "#78909C",
+            emoji: "😐",
+          };
 
-        {/* Content in handwriting font */}
-        <p style={{
-          fontFamily: "'Caveat',cursive",
-          fontSize: "1.15rem", lineHeight: 1.85,
-          color: "rgba(217,245,240,.78)",
-        }}>
-          {journal.content}
-        </p>
+          const d = new Date(journal.created_at);
+
+          const timeStr = d.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+          return (
+            <div key={journal.id || index}>
+              <div
+                style={{
+                  height: 4,
+                  borderRadius: 2,
+                  background: cfg.color,
+                  marginBottom: 16,
+                }}
+              />
+
+              <div
+                style={{
+                  fontSize: ".6rem",
+                  letterSpacing: ".18em",
+                  color: "rgba(217,245,240,.32)",
+                  textTransform: "uppercase",
+                  fontFamily: "'Jost',sans-serif",
+                  fontWeight: 300,
+                  marginBottom: 8,
+                }}
+              >
+                {timeStr} · {journal.mood} {cfg.emoji}
+              </div>
+
+              <h2
+                style={{
+                  fontFamily: "'Cormorant Garamond',serif",
+                  fontSize: "1.4rem",
+                  fontWeight: 300,
+                  color: "#D9F5F0",
+                  marginBottom: 12,
+                }}
+              >
+                {journal.title || "Untitled"}
+              </h2>
+
+              <p
+                style={{
+                  fontFamily: "'Caveat',cursive",
+                  fontSize: "1.15rem",
+                  lineHeight: 1.85,
+                  color: "rgba(217,245,240,.78)",
+                  marginBottom: 24,
+                }}
+              >
+                {journal.content}
+              </p>
+
+              {index < sortedJournals.length - 1 && (
+                <div
+                  style={{
+                    height: 1,
+                    background:
+                      "linear-gradient(90deg, rgba(44,172,173,.3), transparent)",
+                    margin: "24px 0",
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -77,7 +162,8 @@ function JournalModal({ journal, onClose }) {
 export default function MoodCalendarTab({ calendarData, journals }) {
   const today = new Date();
   const [viewDate, setViewDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
-  const [openJournal, setOpenJournal] = useState(null);
+  /*const [openJournal, setOpenJournal] = useState(null);*/
+  const [openJournals, setOpenJournals] = useState([]);
 
   const y = viewDate.getFullYear();
   const m = viewDate.getMonth();
@@ -92,11 +178,20 @@ export default function MoodCalendarTab({ calendarData, journals }) {
       const d = new Date(dateStr);
       const key = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
       // find matching journal for click-to-read
-      const matchJournal = journals.find(j => {
+      /*const matchJournal = journals.find(j => {
         const jd = new Date(j.created_at);
         return jd.getFullYear() === d.getFullYear() && jd.getMonth() === d.getMonth() && jd.getDate() === d.getDate();
-      });
-      map[key] = { mood: info.mood, color: info.color, journal: matchJournal };
+      });*/
+      const matchJournals = journals.filter(j => {
+      const jd = new Date(j.created_at);
+
+      return (
+        jd.getFullYear() === d.getFullYear() &&
+        jd.getMonth() === d.getMonth() &&
+        jd.getDate() === d.getDate()
+      );
+    });
+      map[key] = {mood: info.mood, color: info.color, journals: matchJournals};
     });
     return map;
   };
@@ -108,7 +203,12 @@ export default function MoodCalendarTab({ calendarData, journals }) {
   };
 
   return (
-    <div className="sj-panel">
+    <div
+  className="sj-panel"
+  style={{
+    overflow: openJournals.length > 0 ? "hidden" : undefined,
+  }}
+>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <p className="sj-eyebrow">Mood history</p>
 
@@ -195,7 +295,10 @@ export default function MoodCalendarTab({ calendarData, journals }) {
                   background: moodColor + "22",
                   borderColor: moodColor + "55",
                 } : {}}
-                onClick={() => entry?.journal && setOpenJournal(entry.journal)}
+                onClick={() =>
+  entry?.journals?.length &&
+  setOpenJournals(entry.journals)
+}
                 title={entry ? `${entry.mood} — click to read` : ""}
               >
                 <span style={{ fontSize: ".8rem" }}>{day}</span>
@@ -253,12 +356,12 @@ export default function MoodCalendarTab({ calendarData, journals }) {
       </div>
 
       {/* Journal read modal */}
-      {openJournal && (
-        <JournalModal
-          journal={openJournal}
-          onClose={() => setOpenJournal(null)}
-        />
-      )}
+    {openJournals.length > 0 && (
+  <JournalModal
+    journals={openJournals}
+    onClose={() => setOpenJournals([])}
+  />
+)}
     </div>
   );
 }
