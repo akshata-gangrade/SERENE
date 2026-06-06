@@ -3,6 +3,7 @@ import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { injectGlobalStyles, SereneBg } from "../utils/sereneStyles.jsx";
 import RegisterSuccessModal from "../components/RegisterSuccessModal";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function Register() {
   const [error, setError]       = useState("");
   const [ready, setReady]       = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     injectGlobalStyles();
@@ -167,16 +169,37 @@ export default function Register() {
           </div>
 
           <div>
-            <label style={labelStyle}>Password</label>
+          <label style={labelStyle}>Password</label>
+
+          <div style={{ position: "relative" }}>
             <input
               className="s-input"
-              type="password"
-              placeholder="••••••••"
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onKeyDown={handleKey}
+              style={{ paddingRight: "40px" }}
             />
+
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "12px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "#888",
+              }}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
+        </div>
         </div>
 
         {/* Error */}

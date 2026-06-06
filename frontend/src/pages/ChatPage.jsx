@@ -371,12 +371,8 @@ function GreetingScreen({
           <button
             key={i}
             onClick={() => {
-            setInput(s);
-
-            setTimeout(() => {
-              sendMessage(s);
-              }, 50);
-            }}
+            sendMessage(s);
+          }}
             style={{
               padding: "9px 18px",
               borderRadius: 50,
@@ -510,9 +506,10 @@ export default function ChatPage() {
 };
 
   const sendMessage = async (customMessage = null) => {
-    if (!input.trim() || loading) return;
-    setLoading(true);
-    const userMessage = customMessage || input;
+  const userMessage = customMessage || input;
+
+  if (!userMessage.trim() || loading) return;
+  setLoading(true);
     setMessages(prev => [...prev, { role: "user", content: userMessage }]);
     setInput("");
     try {
